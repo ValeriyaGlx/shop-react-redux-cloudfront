@@ -1,12 +1,13 @@
-codecov:
-  require_ci_to_pass: yes
-  notify:
-    require_ci_to_pass: yes
-    after_n_builds: 2
-  coverage:
-    round: down
-    precision: 2
-    status:
-      project:
-        default:
-          target: auto
+flag_management:
+  individual_flags:
+    - name: smart-tests
+      carryforward: true
+      carryforward_mode: "labels"
+      statuses:
+        - type: "project"
+        - type: "patch"
+
+cli:
+  plugins:
+    pycoverage:
+      report_type: "json"
