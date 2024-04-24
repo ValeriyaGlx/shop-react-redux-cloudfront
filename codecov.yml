@@ -1,14 +1,13 @@
-coverage:
-codecov: 
- token: 7a5ede5c-943a-4ad2-9d05-877b03c84383
-  status:
-    project:
-      default:
-        informational: true
-    patch:
-      default:
-        informational: true
+flag_management:
+  individual_flags:
+    - name: smart-tests
+      carryforward: true
+      carryforward_mode: "labels"
+      statuses:
+        - type: "project"
+        - type: "patch"
 
-
-# When modifying this file, please validate using
-# curl -X POST --data-binary @codecov.yml https://codecov.io/validate
+cli:
+  plugins:
+    pycoverage:
+      report_type: "json"
