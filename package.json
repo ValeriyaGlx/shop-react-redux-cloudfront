@@ -69,5 +69,9 @@
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": ["src/**/*.js"],
+    "coverageDirectory": "coverage"
   }
 }
